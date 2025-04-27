@@ -1,7 +1,8 @@
+<div class="container">
 <h1>Your Photos</h1>
 
 <%= link_to 'Upload New Photo', new_photo_path, class: "button" %>
-
+</div>
 <% if @photos.any? %>
   <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">

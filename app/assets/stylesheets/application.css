@@ -8,3 +8,58 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+/* Center the carousel */
+#photoCarousel {
+    max-width: 800px; /* Optional: Limit width */
+    margin: 2rem auto; /* Center horizontally with margin */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensure images and contents respect border-radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow */
+  }
+  
+  /* Ensure the images inside the carousel also have rounded corners */
+  #photoCarousel img {
+    border-radius: 15px;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 2rem;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+.container{
+    margin: auto;
+    text-align: center;
+}
+
+.button-signup input{
+
+    display: inline-block; 
+    padding: 10px 20px;
+    margin-bottom: 2rem;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.button-signup a{
+    display: inline-block; 
+    padding: 10px 20px;
+    margin-bottom: 2rem;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
