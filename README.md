@@ -1,5 +1,11 @@
 # README
 
+This is a basic RAILS app to that uploads photos
+The purpose of this app is to demonstrate how data is uploaded
+and how hackers can capture unencrypted data using WireShark
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
