@@ -1,0 +1,33 @@
+<h1>Your Photos</h1>
+
+<%= link_to 'Upload New Photo', new_photo_path, class: "button" %>
+
+<% if @photos.any? %>
+  <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @photos.each_with_index do |photo, index| %>
+        <% if photo.image.attached? %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <%= image_tag photo.image.variant(resize_to_limit: [800, 800]), class: "d-block w-100" %>
+            <div class="carousel-caption d-none d-md-block">
+              <p><%= photo.title %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- Carousel controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<% else %>
+  <p>You haven't uploaded any photos yet.</p>
+<% end %>
