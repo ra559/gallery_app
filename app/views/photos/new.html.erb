@@ -1,28 +1,47 @@
-<h1>Upload a New Photo</h1>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Upload a New Photo</h1>
 
-<%= form_with(model: @photo, local: true) do |form| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@photo.errors.count, "error") %> prevented this photo from uploading:</h2>
-      <ul>
-        <% @photo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= form_with(model: @photo, local: true, html: { class: "box" }) do |form| %>
+      <% if @photo.errors.any? %>
+        <div class="notification is-danger">
+          <h2 class="subtitle"><%= pluralize(@photo.errors.count, "error") %> prevented this photo from uploading:</h2>
+          <ul>
+            <% @photo.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+      <div class="field">
+        <%= form.label :title, class: "label" %>
+        <div class="control">
+          <%= form.text_field :title, class: "input", placeholder: "Enter photo title" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :image, class: "label" %>
+        <div class="control">
+          <div class="file">
+            <label class="file-label">
+              <%= form.file_field :image, class: "file-input", accept: "image/jpeg,image/png,image/gif" %>
+              <span class="file-cta">
+                <span class="file-label">
+                  Choose a file…
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <%= form.submit "Upload", class: "button is-primary" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= form.label :image %><br>
-    <%= form.file_field :image %>
-  </div>
-
-  <div>
-    <%= form.submit "Upload" %>
-  </div>
-<% end %>
+</section>
